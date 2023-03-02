@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: 1234
+  host: localhost
+  port: 5432
+
+development:
+  <<: *default
+  database: pitada_de_sal_development
+
+test:
+  <<: *default
+  database: pitada_de_sal_test
+
+production:
+  <<: *default
+  database: pitada_de_sal_production
+  username: pitada_de_sal
+  password: <%= ENV["PITADA_DE_SAL_DATABASE_PASSWORD"] %>
