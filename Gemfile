@@ -23,6 +23,8 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'bootsnap', require: false
 
+gem 'bootstrap', '~> 5.2.2'
+
 group :development, :test do
   gem 'byebug'
   gem 'capybara'
@@ -30,6 +32,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
+  gem 'rubycritic', require: false
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
   gem 'webdrivers'
