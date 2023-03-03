@@ -11,6 +11,16 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-default">
+        <div class="container-fluid">
+          <%= link_to 'Pitada de Sal', root_path, class: 'navbar-brand' %>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>

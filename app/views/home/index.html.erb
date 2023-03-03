@@ -1,0 +1,13 @@
+<section>
+  <% @recipes.each do |recipe| %>
+    <h2><%= recipe.name %></h2>
+    <ul>
+      <li>
+        <%= recipe.preparation_time %> min
+      </li>
+      <li>
+        <%= recipe.portions %> porções
+      </li>
+    </ul>
+  <% end %>
+</section>
