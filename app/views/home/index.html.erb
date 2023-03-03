@@ -3,10 +3,10 @@
     <h2><%= recipe.name %></h2>
     <ul>
       <li>
-        <%= recipe.preparation_time %> min
+        <%= recipe.preparation_time %> <%= t '.min' %> 
       </li>
       <li>
-        <%= recipe.portions %> porções
+        <%= recipe.portions %> <%= t '.portions' %>
       </li>
     </ul>
   <% end %>
