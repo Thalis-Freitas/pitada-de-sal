@@ -1,7 +1,7 @@
 :root{
-  --color: #ff9843;
+  --default: #ff9843;
 }
 
 .bg-default{
-  background-color: #ff9843;
+  background-color: var(--default);
 }
