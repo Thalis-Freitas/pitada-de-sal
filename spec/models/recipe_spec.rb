@@ -28,9 +28,9 @@ RSpec.describe Recipe, type: :model do
       end
 
       it 'modo de preparo não pode ficar em branco' do
-        recipe = Recipe.new(ingredients: '')
+        recipe = Recipe.new(instructions: '')
         recipe.valid?
-        expect(recipe.errors[:ingredients]).to include 'não pode ficar em branco'
+        expect(recipe.errors[:instructions]).to include 'não pode ficar em branco'
       end
     end
 
