@@ -51,11 +51,12 @@ RSpec.describe Recipe, type: :model do
 
   context '#set_post_date' do
     it 'deve definir a data de postagem' do
+      sobremesas = Category.create!(name: 'sobremesas')
       recipe = Recipe.create!(name: 'Bolo de chocolate', preparation_time: 50, portions: 12,
                               ingredients: ['2 xícaras de farinha de trigo', '1 xícara de açúcar',
                                             '1 xícara de achocolatado', '1 colher (sobremesa) de fermento em pó',
                                             '1 pitada de sal', '2 ovos', '1 xícara de água morna',
-                                            '1 xícara de óleo'],
+                                            '1 xícara de óleo'], category: sobremesas,
                               instructions: ['Misture os ingredientes secos (exceto o fermento) em uma vasilha',
                                              'Na mesma, acrescente os ovos, a água morna e o óleo', 'Misture bem',
                                              'Unte a forma com margarina e polvilhe farinha de trigo',
