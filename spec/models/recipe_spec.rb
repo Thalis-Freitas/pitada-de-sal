@@ -1,6 +1,54 @@
 require 'rails_helper'
 
 RSpec.describe Recipe, type: :model do
+  describe '#valid?' do
+    context 'presence' do
+      it 'nome não pode ficar em branco' do
+        recipe = Recipe.new(name: '')
+        recipe.valid?
+        expect(recipe.errors[:name]).to include 'não pode ficar em branco'
+      end
+
+      it 'tempo de preparo não pode ficar em branco' do
+        recipe = Recipe.new(preparation_time: '')
+        recipe.valid?
+        expect(recipe.errors[:preparation_time]).to include 'não pode ficar em branco'
+      end
+
+      it 'porções não pode ficar em branco' do
+        recipe = Recipe.new(portions: '')
+        recipe.valid?
+        expect(recipe.errors[:portions]).to include 'não pode ficar em branco'
+      end
+
+      it 'ingredientes não pode ficar em branco' do
+        recipe = Recipe.new(ingredients: '')
+        recipe.valid?
+        expect(recipe.errors[:ingredients]).to include 'não pode ficar em branco'
+      end
+
+      it 'modo de preparo não pode ficar em branco' do
+        recipe = Recipe.new(instructions: '')
+        recipe.valid?
+        expect(recipe.errors[:instructions]).to include 'não pode ficar em branco'
+      end
+    end
+
+    context '#comparison' do
+      it 'tempo de preparo deve ser maior do que 0' do
+        recipe = Recipe.new(preparation_time: 0)
+        recipe.valid?
+        expect(recipe.errors[:preparation_time]).to include 'deve ser maior que 0'
+      end
+
+      it 'porções deve ser maior do que 0' do
+        recipe = Recipe.new(portions: -5)
+        recipe.valid?
+        expect(recipe.errors[:portions]).to include 'deve ser maior que 0'
+      end
+    end
+  end
+
   context '#set_post_date' do
     it 'deve definir a data de postagem' do
       recipe = Recipe.create!(name: 'Bolo de chocolate', preparation_time: 50, portions: 12,
