@@ -42,7 +42,7 @@ RSpec.describe Recipe, type: :model do
       end
 
       it 'porções deve ser maior do que 0' do
-        recipe = Recipe.new(portions: 0)
+        recipe = Recipe.new(portions: -5)
         recipe.valid?
         expect(recipe.errors[:portions]).to include 'deve ser maior que 0'
       end
